@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@mui/material/Button';
+import Link from 'next/link';
 import { Main } from '../components/Main';
 import ShopTable from '../components/ShopTable/ShopTable';
 import useAuthGuard from '../hooks/useAuthGuard';
@@ -15,11 +17,20 @@ export default function HomePage() {
 
   return (
     <Main>
-      <ShopTable
-        rows={shops || []}
-        loading={isLoading}
-        onDeleteMany={handleDeleteMany}
-      ></ShopTable>
+      <div>
+        <div className="mb-4  flex flex-row">
+					<div className='grow'>
+					</div>
+          <Link href="/new/shop" passHref legacyBehavior>
+            <Button variant="contained">新增店家</Button>
+          </Link>
+        </div>
+        <ShopTable
+          rows={shops || []}
+          loading={isLoading}
+          onDeleteMany={handleDeleteMany}
+        ></ShopTable>
+      </div>
     </Main>
   );
 }
