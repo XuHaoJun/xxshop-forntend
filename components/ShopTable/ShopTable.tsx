@@ -61,32 +61,43 @@ export default function ShopTable({
   const deleteDisabled = selectionModel.length === 0;
 
   const columns: any[] = [
-    { field: 'id', headerName: 'ID', type: 'number', width: 70 },
+    {
+      field: 'id',
+      headerName: 'ID',
+      type: 'number',
+      resizable: false,
+      width: 50,
+    },
     {
       field: 'displayName',
       headerName: '店家名稱',
       sortable: false,
-      editable: true,
-      width: 90,
+      editable: false,
+      resizable: true,
+      width: 150,
     },
     {
       field: 'address',
       headerName: '地址',
       sortable: false,
-      editable: true,
-      width: 130,
+      editable: false,
+      resizable: true,
+      width: 150,
     },
     {
       field: 'phoneNumber',
       headerName: '電話',
       sortable: false,
-      editable: true,
-      width: 90,
+      editable: false,
+      resizable: true,
+      width: 110,
     },
     {
       field: 'ownerName',
       headerName: '負責人名稱',
       sortable: false,
+      editable: false,
+      resizable: true,
       width: 90,
       valueGetter: (params: GridValueGetterParams) =>
         params.row.owner?.displayName || '',
@@ -95,6 +106,8 @@ export default function ShopTable({
       field: 'ownerDescription',
       headerName: '負責人簡介',
       sortable: false,
+      editable: false,
+      resizable: true,
       width: 130,
       valueGetter: (params: GridValueGetterParams) =>
         params.row.owner?.description || '',
@@ -103,7 +116,9 @@ export default function ShopTable({
       field: 'actions',
       type: 'actions',
       headerName: 'Actions',
-      width: 100,
+      editable: false,
+      resizable: true,
+      width: 50,
       cellClassName: 'actions',
       getActions: ({ id }: { id: any }) => {
         const editLink = `/shops/${id}/edit`;
@@ -141,6 +156,8 @@ export default function ShopTable({
         onSelectionModelChange={(nextSelectionModel) => {
           setSelectionModel(nextSelectionModel);
         }}
+        getRowHeight={() => 'auto'}
+        getEstimatedRowHeight={() => 200}
         selectionModel={selectionModel}
       />
     </div>
