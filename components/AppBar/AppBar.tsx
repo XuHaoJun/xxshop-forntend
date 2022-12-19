@@ -32,7 +32,7 @@ export default function ButtonAppBar() {
               disableElevation
               style={{ textTransform: 'none' }}
             >
-              <Typography variant="h6">Shops</Typography>
+              <Typography variant="h6">xxshop</Typography>
             </Button>
           </Link>
           <Box sx={{ flexGrow: 1 }}></Box>
