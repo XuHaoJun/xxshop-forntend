@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Quitckstart
 
-## Getting Started
+```sh
+yarn install
 
-First, run the development server:
+# edit .env file for config api url 
+# API_PROXY_URL
 
-```bash
-npm run dev
-# or
+# open http://localhost:3000
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Spec
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+功能項目：
+1. 使用者可以使用Line Login註冊以及登入
+2. 使用者登入後可以新增多筆店家資訊並且看到店家相關資訊
+3. 可以新增店家
+4. 修改店家資訊
+5. 刪除店家
+6. 取得單一店家資訊
+7. 取得所有店家列表
+8. 使用者可以看到店家名稱、地址、電話、負責人的資訊
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+開發規範：
+1. 請用Restful風格開發API
+2. 指定NodeJs語言開發，您可以使用express、koajs或其他Nodejs支援的框架開發
+3. 需有前端畫面，可以使用目前三大框架：Vuejs、React.Js以及Angular
+4. DB需使用PostgreSql
